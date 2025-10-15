@@ -1,0 +1,26 @@
+ALGORITHME CompterPhraseTousCaracteres
+VAR
+    ch : CARACTERE
+    longueur, mots, voyelles : ENTIER
+DEBUT
+    longueur ← 0
+    mots ← 1
+    voyelles ← 0
+
+    REPETER
+        LIRE(ch)
+        SI ch <> '.' ALORS
+            longueur ← longueur + 1
+            SI ch IN {'a','e','i','o','u','A','E','I','O','U'} ALORS
+                voyelles ← voyelles + 1
+            FINSI
+            SI ch = ' ' ALORS
+                mots ← mots + 1
+            FINSI
+        FINSI
+    JUSQUA ch = '.'
+
+    ECRIRE("Longueur = ", longueur)
+    ECRIRE("Mots = ", mots)
+    ECRIRE("Voyelles = ", voyelles)
+FIN
